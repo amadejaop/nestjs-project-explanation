@@ -38,8 +38,9 @@ export class BoardsService {
     }
 
     deleteBoard(id: string): void {
+        const found = this.getBoardById(id);
         // create a new array with boards where id does NOT match the id provided for deletion of a board
-        this.boards = this.boards.filter(board => board.id !== id);
+        this.boards = this.boards.filter(board => board.id !== found.id);
     }
 
     updateBoardStatus(id: string, status: BoardStatus): Board {
