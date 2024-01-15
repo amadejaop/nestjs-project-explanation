@@ -35,4 +35,10 @@ export class BoardsService {
         // create a new array with boards where id does NOT match the id provided for deletion of a board
         this.boards = this.boards.filter(board => board.id !== id);
     }
+
+    updateBoardStatus(id: string, status: BoardStatus): Board {
+        const board = this.getBoardById(id);
+        board.status = status;
+        return board;
+    }
 }
