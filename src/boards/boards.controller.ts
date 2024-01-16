@@ -22,6 +22,11 @@ export class BoardsController {
         return this.boardsService.createBoard(createBoardDto);
     }
 
+    @Delete('/:id')
+    deleteBoard(@Param('id') id: number): void {
+        this.boardsService.deleteBoard(id);
+    }
+
 
 /* 
     @Get()
